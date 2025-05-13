@@ -25,5 +25,6 @@ Includes early stopping for XGBoost and CatBoost.
 
 Tracks overfitting by comparing train/test R² or RMSE metrics.
 
-
+### no_negative_updated.csv
+This is the dataset used in this study. Outliers were first removed using z-score thresholding, where data points with values greater than three standard deviations from the mean (z-score > 3) were excluded, reducing the dataset from 350 to 347 samples. Next, non-physical entries with negative PCE values were removed, further reducing the dataset to 345 samples. To eliminate redundant representations of the same molecule, isomeric duplicates were identified using canonical SMILES strings generated via RDKit. For each group of structural duplicates, only one representative molecule was retained, resulting in a final dataset of 342 unique donor molecules. To mitigate redundancy among features, pairs of descriptors with a Pearson correlation coefficient greater than 0.8 were identified, and one feature from each highly correlated pair was removed.
 
